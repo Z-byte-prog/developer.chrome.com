@@ -117,3 +117,15 @@ close:
 
 back:
   en: 'Back'
+
+release_stable:
+  en: 'Stable'
+
+release_beta:
+  en: 'Beta'
+
+release_dev:
+  en: 'Dev'
+
+release_canary:
+  en: 'Canary'

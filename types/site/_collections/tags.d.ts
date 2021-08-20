@@ -27,6 +27,7 @@ declare global {
       [locale: string]: EleventyCollectionItem[];
     };
     isGeneratedTag: boolean;
+    release?: number;
   }
   export interface Tags {
     [tag: string]: Tag;
