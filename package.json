@@ -52,7 +52,7 @@
     "escape-string-regexp": "^4.0.0",
     "express": "^4.17.1",
     "glob": "^7.1.7",
-    "gorko": "^0.2.1",
+    "gorko": "^0.7.1",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
     "html-minifier": "^4.0.0",
