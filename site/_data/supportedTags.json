@@ -29,6 +29,9 @@
   "deprecations": {
     "title": "i18n.tags.deprecations"
   },
+  "device-characteristics": {
+    "title": "i18n.tags.device-characteristics"
+  },
   "devices": {
     "title": "i18n.tags.devices"
   },
@@ -88,5 +91,8 @@
   },
   "devtools-engineering": {
     "title": "i18n.tags.devtools-engineering"
+  },
+  "devtools-architecture": {
+    "title": "i18n.tags.devtools-architecture"
   }
 }

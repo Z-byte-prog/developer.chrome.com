@@ -2,7 +2,7 @@
 layout: "layouts/doc-post.njk"
 title: "Spam policy FAQ"
 date: 2020-05-01
-updated: 2021-06-24
+updated: 2021-08-25
 description: Frequently asked questions about Chrome Web Store's spam policy.
 ---
 
@@ -14,7 +14,7 @@ extensions (or any other items) that developers submit to the Chrome Web Store.
 ### What is a repetitive content violation? {: #definition }
 
 Our developer policy prohibits the [submission of repetitive
-content](/docs/webstore/program_policies#spam). In general, this means you cannot submit multiple
+content][spam-policy]. In general, this means you cannot submit multiple
 extensions that provide the same experience.
 
 More specifically, developers cannot submit content that provides the same user experience, even if
@@ -86,14 +86,13 @@ test variant of the extension must be clearly labeled:
   so that users can find it. You may also wish to link from the production variant to any others so
   that users can find those too. (If you have a version that you want to test without allowing
   general access, you should not list it as public, but instead [publish to test
-  accounts](/docs/webstore/publish#publishing-to-test-accounts).)
+  accounts][test-accounts].)
 
 
 ### Can developers appeal a repetitive content violation? {: #appeal }
 
-You can appeal a repetitive content violation if you think it was flagged in error. To appeal, see
-the instructions included in the notification email—this is sent to the email address listed under
-your CWS developer account.
+You can appeal a repetitive content violation if you think it was flagged in error. Appeals can be made by using the [CWS Support form][cws-support-form]. To learn more, see the [Complaint handling
+process FAQ][complaint-faq].
 
 ### How can developers consolidate their user base? {: #consolidation }
 
@@ -129,10 +128,15 @@ policy. Developers should implement any language-specific code within a single e
 
 ### How many sites/keywords/brands can be listed in the metadata? {: #keyword-repetition }
 
-At most five instances of a keyword. Keywords must be relevant to the extension's purpose. Do not
-repeat brand names in the description. When listing supported websites or brands in the description,
-do not list more than five. To provide a longer list of brands or websites, provide a link that
-users can refer to or embed the list in one of the extension's promotional screenshots.
+This depends on how relevant the keywords are in context, however, it's best to keep  instances of a
+specific keyword to under 5. Keywords must be relevant to the extension's purpose and not
+unnecessarily repeat in an unnatural way. Including more than 5 instances of a single keyword may
+result in increased scrutiny of your extensions, but will be allowed if its use is considered
+appropriate and relevant. 
+
+When listing supported websites or brands in the description, do not list more than five. To provide
+a longer list of brands or websites, provide a link that users can refer to or embed the list in one
+of the extension's promotional screenshots.
 
 ### Can the extension description contain information about additional topics related to the extension? {: #unrelated-information }
 
@@ -144,8 +148,8 @@ information about that industry in its description.
 ### What is the maximum number of times the extension's primary purpose can be mentioned in the description? {: #purpose-repetition }
 
 Do not mention one word or phrase repeatedly in the description even if it is the primary purpose of
-the extension. For example, an extension that provides puzzles should not call out the word _puzzle_
-more than five times in the description.
+the extension, unless its use is critical. For example, an extension that provides puzzles should
+not call out the word _puzzle_ more than five times in the description.
 
 ### Can the extension's short description be repeated in the extension's description? {: #short-description-repetition }
 
@@ -179,3 +183,8 @@ with the publisher.
 
 This is allowed only as an auxiliary feature within the overall extension functionality. It cannot
 be the single purpose of the extension.
+
+[complaint-faq]: /docs/webstore/complaint-faq
+[cws-support-form]: https://support.google.com/chrome_webstore/contact/one_stop_support
+[spam-policy]: /docs/webstore/program_policies#spam
+[test-accounts]: /docs/webstore/cws-dashboard-distribution#private-visibility-trusted-testers
