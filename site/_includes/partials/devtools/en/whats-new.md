@@ -1,6 +1,18 @@
 ## What's New in DevTools {: #whats-new }
 A list of everything that has been covered in the [What's New In DevTools](/tags/new-in-devtools/) series.
 
+
+### Chrome 95 {: #chrome95 }
+* [New CSS length authoring tools](/blog/new-in-devtools-95/#)
+* [Hide issues in the Issues tab](/blog/new-in-devtools-95/#hide-issues)
+* [Improved the display of properties](/blog/new-in-devtools-95/#properties)
+* [Lighthouse 8.4 in the Lighthouse panel](/blog/new-in-devtools-95/#lighthouse)
+* [Sort snippets in the Sources panel](/blog/new-in-devtools-95/#snippets)
+* [New links to translated release notes and report a translation bug](/blog/new-in-devtools-95/#localized)
+* [Improved UI for DevTools command menu](/blog/new-in-devtools-95/#command-menu)
+
+
+
 ### Chrome 94 {: #chrome94 }
 
 * [Use DevTools in your preferred language](/blog/new-in-devtools-94/#localized)
@@ -22,6 +34,7 @@ A list of everything that has been covered in the [What's New In DevTools](/tags
 * [Editable CSS container queries  in the Styles pane](/blog/new-in-devtools-93/#container-queries)
 * [Web bundle preview in the Network panel](/blog/new-in-devtools-93/#web-bundle)
 * [Attribution Reporting API debugging](/blog/new-in-devtools-93/#attribution-reporting)
+* [Better string handling in the Console](/blog/new-in-devtools-93/#string)
 * [Improved CORS debugging](/blog/new-in-devtools-93/#cors)
 * [Lighthouse 8.1](/blog/new-in-devtools-93/#lighthouse)
 * [New note URL in the Manifest pane](/blog/new-in-devtools-93/#new-note-url)

@@ -1,21 +1,25 @@
 ---
 api: declarativeNetRequest
-extra_permissions:
-- declarativeNetRequestFeedback
 extra_permissions_html:
+  <code>declarativeNetRequestFeedback</code><br/>
   <a href="declare_permissions#host-permissions">host permissions</a><br />
-  Note that <code>declarativeNetRequestFeedback</code> and host permissions should only be specified when necessary.
 ---
 
 ## Manifest
 
-Extensions must declare the `"declarativeNetRequest"` permission in the extension [manifest][1] to
-use this API. The `"declarativeNetRequestFeedback"` permission is required to access functions and
-events which return information on declarative rules matched. [Host permissions][2] are required if
-the extension wants to redirect requests or modify headers. To specify static [Rulesets][3],
-extensions must also declare the `"declarative_net_request"` manifest key, which should be a
-dictionary with a single key called `"rule_resources"`. It should be a list containing dictionaries
-of type [Ruleset][4], as shown below.
+Extensions must declare either the `declarativeNetRequest` or the 
+`declarativeNetRequestWithHostAccess` (available since **Chrome 96**) permission in the extension 
+[manifest][1] to use this API. The former allows extensions to block and upgrade requests without 
+any [host permissions][2]. Host permissions are still required if the extension wants to redirect a 
+request or modify headers on it. The `declarativeNetRequestWithHostAccess` permission always 
+requires host permissions to the request URL and initiator to act on a request.
+
+The `declarativeNetRequestFeedback` permission is required to access functions and events which 
+return information on declarative rules matched. 
+
+To specify static [Rulesets][3], extensions must also declare the `"declarative_net_request"` 
+manifest key, which should be a dictionary with a single key called `"rule_resources"`. It should be
+a list containing dictionaries of type [Ruleset][4], as shown below.
 
 ```json
 {
@@ -45,9 +49,16 @@ of type [Ruleset][4], as shown below.
 ## Rule Resources
 
 An extension can specify up to [MAX_NUMBER_OF_STATIC_RULESETS][5] [rulesets][6] as part of the
-`"rule_resources"` manifest key. An extension is allowed to enable at least
-[GUARANTEED_MINIMUM_STATIC_RULES][7] static rules. Additional static rule sets may or may not be
-enabled depending on the available [global static rule limit][8].
+`"rule_resources"` manifest key. Only [MAX_NUMBER_OF_ENABLED_STATIC_RULESETS][18] of these rulesets
+can be enabled at a time, assuming static rule limits are not exceeded.
+
+An extension is allowed to enable at least [GUARANTEED_MINIMUM_STATIC_RULES][7] static rules.
+Additional static rulesets may or may not be enabled depending on the available
+[global static rule limit][8].
+
+**Note:** Errors and warnings about invalid static rules are only displayed for unpacked extensions.
+Invalid static rules in packed extensions are ignored. It's therefore important to verify that your
+static rulesets are valid by testing with an unpacked version of your extension.
 
 ## Global Static Rule Limit
 
@@ -104,6 +115,8 @@ An extension can add or remove rules dynamically using the [updateDynamicRules][
 An extension can update the set of enabled static rulesets using the [updateEnabledRulesets][14] API
 method.
 
+- The number of static rulesets which are enabled at one time must not exceed
+  [MAX_NUMBER_OF_ENABLED_STATIC_RULESETS][18].
 - The number of rules across enabled static rulesets across all extensions must not exceed the
   [global limit][15]. Calling [getAvailableStaticRuleCount][10] is recommended to check the number
   of rules an extension can still enable before the global limit is reached.
@@ -155,8 +168,8 @@ is determined based on the priority of each rule and the operations specified.
   JavaScript in the extension process.
 - Because the requests are not intercepted by the extension process, declarativeNetRequest removes
   the need for extensions to have a background page; resulting in less memory consumption.
-- Unlike the webRequest API, blocking requests using the declarativeNetRequest API requires no host
-  permissions.
+- Unlike the webRequest API, blocking or upgrading requests using the declarativeNetRequest API 
+  requires no host permissions when used with the `declarativeNetRequest` permission.
 - The declarativeNetRequest API provides better privacy to users because extensions can't actually
   read the network requests made on the user's behalf.
 - Unlike the webRequest API, any images or iframes blocked using the declarativeNetRequest API are
@@ -358,3 +371,4 @@ is determined based on the priority of each rule and the operations specified.
 [15]: #global-static-rule-limit
 [16]: /docs/extensions/webRequest
 [17]: #method-updateSessionRules
+[18]: #property-MAX_NUMBER_OF_ENABLED_STATIC_RULESETS
