@@ -38,8 +38,9 @@
     "sync-external": "node ./external/sync-external.js"
   },
   "license": "Apache 2.0",
-  "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+  "dependencies":
+    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@google-cloud/storage": "^5.14.4",
