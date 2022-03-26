@@ -1,0 +1,24 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.22.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@11ty/eleventy > lodash':
+        patched: '2022-03-26T02:00:07.224Z'
+    - concurrently > lodash:
+        patched: '2022-03-26T02:00:07.224Z'
+    - '@lhci/cli > inquirer > lodash':
+        patched: '2022-03-26T02:00:07.224Z'
+    - '@11ty/eleventy > browser-sync > easy-extender > lodash':
+        patched: '2022-03-26T02:00:07.224Z'
+    - '@lhci/cli > lighthouse > inquirer > lodash':
+        patched: '2022-03-26T02:00:07.224Z'
+    - '@lhci/cli > @lhci/utils > lighthouse > inquirer > lodash':
+        patched: '2022-03-26T02:00:07.224Z'
+    - '@11ty/eleventy > pug > pug-code-gen > constantinople > babel-types > lodash':
+        patched: '2022-03-26T02:00:07.224Z'
+    - '@11ty/eleventy > pug > pug-filters > constantinople > babel-types > lodash':
+        patched: '2022-03-26T02:00:07.224Z'
+    - '@11ty/eleventy > pug > pug-code-gen > pug-attrs > constantinople > babel-types > lodash':
+        patched: '2022-03-26T02:00:07.224Z'
