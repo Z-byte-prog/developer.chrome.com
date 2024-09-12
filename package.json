@@ -39,7 +39,7 @@
   },
   "license": "Apache 2.0",
   "dependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@google-cloud/storage": "^5.14.4",
@@ -54,7 +54,7 @@
     "compression": "^1.7.4",
     "concurrently": "^5.2.0",
     "escape-string-regexp": "^4.0.0",
-    "express": "^4.17.1",
+    "express": "^4.21.0",
     "glob": "^7.1.7",
     "gorko": "^0.2.1",
     "gray-matter": "^4.0.3",
